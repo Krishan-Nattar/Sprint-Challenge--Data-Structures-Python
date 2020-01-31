@@ -39,3 +39,22 @@ print (f"runtime: {end_time - start_time} seconds")
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish with no restrictions on techniques or data
 # structures?
+
+start_time = time.time()
+
+dup_stretch = []
+hash_table = {}
+
+for name_1 in names_1: # O(n)
+    hash_table[name_1] = True
+
+for name_2 in names_2: # O(n)
+    if name_2 in hash_table: # O(1)
+        dup_stretch.append(name_2)
+# O(2n)
+# Runtime: 0.003999471664428711 seconds
+
+
+end_time = time.time()
+print (f"{len(dup_stretch)} duplicates:\n\n{', '.join(dup_stretch)}\n\n")
+print (f"runtime: {end_time - start_time} seconds")
