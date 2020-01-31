@@ -46,6 +46,7 @@ print (f"runtime: {end_time - start_time} seconds")
 # What's the best time you can accomplish with no restrictions on techniques or data
 # structures?
 
+#  Could use a set()
 start_time = time.time()
 
 dup_stretch = []

@@ -57,4 +57,3 @@ class LinkedList:
       current_node = next_node1
 
     self.head = previous_node # If current_node is None, we know the value in previous_node was the last in linked list, so we set it as the new head
-    pass

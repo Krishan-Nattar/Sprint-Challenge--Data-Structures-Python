@@ -9,14 +9,14 @@ class RingBuffer:
 
     def append(self, item):
 
-        # If there is nothing in the DLL yet, add the first item and instantiate current to head.
+        # If there is nothing in the DLL yet, add the first item and instantiate current to head/tail.
         if self.current == None:
             self.storage.add_to_tail(item) # This could also be add_to_head(item), but for consistency with the whole project I left it as add_to_tail
             self.current = self.storage.head
             return
         
         # If we have reached the maximum items in our DLL:
-        if len(self.storage) >= self.capacity:
+        if len(self.storage) >= self.capacity: # could just be ==
             # If current is NOT the tail, we change the current to the next node and also update it's value
             if self.current != self.storage.tail:
                 self.current.next.value = item
