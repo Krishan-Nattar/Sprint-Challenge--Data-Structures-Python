@@ -43,5 +43,17 @@ class LinkedList:
     return False
 
   def reverse_list(self):
-    # TO BE COMPLETED
-    pass
+    # We loop through the whole list once, so there is a runtime of O(n)
+
+    previous_node = None # Instantiate previous_node to None, because the current_node will be head, which has no previous node
+    current_node = self.head # Initialize the first node. This will end up being the resulting "tail"
+    next_node1 = None # We could set this to current_node.next_node, but that would be redundant since the code will be repeated again
+    while current_node: 
+      next_node1 = current_node.next_node # Keep track of the upcoming node so we don't lose a reference to it in the next line
+      current_node.next_node = previous_node # Reverse the link
+
+      # Move previous_node and current_node forward 1 node (according to the original linked list)
+      previous_node = current_node 
+      current_node = next_node1
+
+    self.head = previous_node # If current_node is None, we know the value in previous_node was the last in linked list, so we set it as the new head
