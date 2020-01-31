@@ -14,18 +14,13 @@ f.close()
 duplicates = []
 
 binary_tree = BinarySearchTree(names_1[0])
-# O(n)
-for name_1 in names_1:
+
+for name_1 in names_1: # O(n)
     binary_tree.insert(name_1)
-    # table[name_1] = True
 
-
-# O(n)
-for name_2 in names_2:
+for name_2 in names_2: # O(n)
     if binary_tree.contains(name_2): # O(log n)
         duplicates.append(name_2)
-    # if name_2 in table: # O(1)
-        # duplicates.append(name_2)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
