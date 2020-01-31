@@ -52,10 +52,20 @@ class RingBuffer:
 
 class ArrayRingBuffer:
     def __init__(self, capacity):
-        pass
+        self.capacity = capacity # Set max capacity
+        self.storage = [None] * capacity # Instantiate with a list set to the length of max capacity
+        self.current = None # This will track the current value via an [index] of self.storage
 
     def append(self, item):
-        pass
+        if self.current != None: # If self.current == None, then we haven't appended ANYTHING yet. So this checks if we already have at least one item appended
+            if self.current + 1 == self.capacity: # Checks to see if self.current is at the end of the list. If it is, we switch it to the beginning.
+                self.current = 0
+            else:
+                self.current += 1 # If self.current is NOT at the end of the list, we move the index up one spot.
+        else:
+            self.current = 0 # If we have not appended ANY item to storage, we instantiate self.current to the first index [0]
+        
+        self.storage[self.current] = item
 
     def get(self):
-        pass
+        return [x for x in self.storage if x] # Return a list of everything in self.storage, excluding 'None'
