@@ -38,12 +38,11 @@ class RingBuffer:
 
         # TODO: Your code here
 
-        # if self.storage.head:
-        current = self.storage.head
-        while current:
-            if current.value:
-                list_buffer_contents.append(current.value)
-            current = current.next
+        # Loop through each item in the DLL and append that value to list_buffer_contents
+        current = self.storage.head # Start current off at the beginning of the list
+        while current: # Check if node exists
+            list_buffer_contents.append(current.value) # Append value to list
+            current = current.next # Move to next node
 
         return list_buffer_contents
 
