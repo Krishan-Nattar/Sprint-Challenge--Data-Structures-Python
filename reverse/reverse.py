@@ -43,6 +43,7 @@ class LinkedList:
     return False
 
   def reverse_list(self):
+    # We loop through the whole list once, so there is a runtime of O(n)
 
     previous_node = None # Instantiate previous_node to None, because the current_node will be head, which has no previous node
     current_node = self.head # Initialize the first node. This will end up being the resulting "tail"
