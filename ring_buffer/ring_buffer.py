@@ -36,8 +36,6 @@ class RingBuffer:
         # Note:  This is the only [] allowed
         list_buffer_contents = []
 
-        # TODO: Your code here
-
         # Loop through each item in the DLL and append that value to list_buffer_contents
         current = self.storage.head # Start current off at the beginning of the list
         while current: # Check if node exists

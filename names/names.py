@@ -17,6 +17,12 @@ duplicates = []
 
 binary_tree = BinarySearchTree(names_1[0])
 
+# O(n^2)
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+
 for name_1 in names_1: # O(n)
     binary_tree.insert(name_1)
 
@@ -26,7 +32,7 @@ for name_2 in names_2: # O(n)
 
 # Runtime: 0.06696081161499023 seconds
 # Runtime complexity: O(2n log n)
-# n = input size of names. (They are different inputs, but i simplified it to one 'n' variable instead of n1 + n2, because they are both at 10,000 names)
+# n = input size of names. (They are different inputs, but I simplified it to one 'n' variable instead of n1 + n2, because they are both at 10,000 names)
 
 
 end_time = time.time()
